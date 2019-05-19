@@ -1,15 +1,11 @@
 package testDriven;
 
-class Dollar extends Money{
-	   int amount;
-	   Dollar(int amount) {
-	      this.amount= amount;
+class Dollar extends Money {	
+	   Dollar(int amount, String currency)  {
+	      super(amount, currency);
 	   }
-	   public Money times(int multiplier) {
-		   return new Dollar(amount * multiplier);		
+		
+	   Money times(int multiplier)  {
+	      return Money.dollar(amount * multiplier);
 	   }
-	   public boolean equals(Object object)  {
-		   Dollar dollar = (Dollar) object;
-		   return amount == dollar.amount;
-		}
-}	
+	}
